@@ -31,7 +31,7 @@ def get_ai_advice(salary, expenses, savings, score):
         return response.choices[0].message.content
 
     except Exception as e:
-        # ✅ Fallback (VERY IMPORTANT FOR HACKATHON)
+        # Fallback (VERY IMPORTANT FOR HACKATHON)
         return f"""
 AI service temporarily unavailable.
 

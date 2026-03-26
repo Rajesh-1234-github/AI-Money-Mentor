@@ -22,20 +22,20 @@ goal_years = st.number_input("Years to achieve goal", min_value=1)
 # Analyze Button
 if st.button("Analyze"):
 
-    # 🔹 Calculations
+    #  Calculations
     savings = calculate_savings(salary, expenses)
     score = calculate_health_score(salary, expenses)
     tax = tax_suggestion(salary)
     sip = calculate_sip(goal_amount, goal_years)
 
-    # 🔹 Results
+    #  Results
     st.subheader(" Results")
     st.write(f" Monthly Savings: ₹{savings}")
     st.write(f" Money Health Score: {score}/100")
     st.write(f" Tax Suggestion: {tax}")
     st.write(f" Required Monthly Investment (SIP): ₹{int(sip)}")
 
-    # 🔹 Basic AI Advice
+    #  Basic AI Advice
     st.subheader(" AI Advice")
     if score > 80:
         st.success("Excellent financial health! Keep investing regularly.")
@@ -44,12 +44,12 @@ if st.button("Analyze"):
     else:
         st.warning("Your savings are low. Try to reduce expenses and invest more.")
 
-    # 🔹 Advanced AI (IMPORTANT FIX)
+    #  Advanced AI (IMPORTANT FIX)
     st.subheader(" AI Financial Advisor")
     ai_advice = get_ai_advice(salary, expenses, savings, score)
     st.write(ai_advice)
 
-    # 📊 BAR GRAPH
+    #  BAR GRAPH
     st.subheader(" Financial Overview")
 
     labels = ['Expenses', 'Savings']
@@ -67,7 +67,7 @@ if st.button("Analyze"):
 
     st.pyplot(fig)
 
-    # 🥧 PIE CHART
+    #  PIE CHART
     st.subheader(" Expense vs Savings Distribution")
 
     fig2, ax2 = plt.subplots()
